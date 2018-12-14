@@ -1,0 +1,38 @@
+<br>
+<div class="row">
+ <div class="col col-md-12">
+   <h3>Lista de Autores</h3>
+ </div>
+  <div class="col col-md-12">
+  
+	  <table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Nombre</th>
+	      <th scope="col">Nacionalidad</th>
+	      <th scope="col">Eliminar</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	      <tr th:each="data, iterstat: ${listaAutores}">
+	        <td th:text="${data.idAutor}" th:id="|td${iterstat.index}|"></td>
+     		<td th:text="${data.nombre_completo}" th:id="|td${iterstat.index}|"></td>
+  		    <td th:text="${data.nacionalidad}" th:id="|td${iterstat.index}|"></td>
+  		    
+  		    <td>
+  		      <a class="btn btn-danger" th:href="@{'/eliminar'${data.idAutor}}" >Eliminar</a>
+  		   
+  		    </td>
+  		    
+  		</tr>
+	  </tbody>
+	</table>
+	<hr>
+	<button class="btn btn-primary">Agregar</button>
+	  
+ </div>
+ 
+
+</div>
+
